@@ -37,13 +37,15 @@ const feedback = document.getElementById('formFeedback');
 
 if(contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
+
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const msg = document.getElementById('message').value;
 
+        // validation check
         if(name.trim().length < 2 || msg.trim().length < 10) {
+            e.preventDefault(); // ❗ শুধু error হলে block করবে
+
             feedback.style.display = 'block';
             feedback.style.background = 'rgba(255, 77, 77, 0.2)';
             feedback.style.color = '#ff4d4d';
@@ -52,17 +54,14 @@ if(contactForm) {
             return;
         }
 
+        // sending message
         feedback.style.display = 'block';
-        feedback.style.background = 'rgba(0, 255, 0, 0.1)';
-        feedback.style.color = '#00ff00';
-        feedback.style.border = '1px solid #00ff00';
-        feedback.innerText = 'আপনার বার্তাটি আমাদের কাছে পৌঁছেছে। ধন্যবাদ।';
-        
-        contactForm.reset();
-        
-        setTimeout(() => {
-            feedback.style.display = 'none';
-        }, 6000);
+        feedback.style.background = 'rgba(0, 0, 0, 0.3)';
+        feedback.style.color = '#fff';
+        feedback.style.border = '1px solid #999';
+        feedback.innerText = 'বার্তা পাঠানো হচ্ছে... ⏳';
+
+        // এখানে preventDefault নাই → form submit হবে (Formspree তে যাবে)
     });
 }
 

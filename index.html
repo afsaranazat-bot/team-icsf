@@ -147,27 +147,31 @@
     <section id="contact">
         <h2 class="section-title" data-aos="fade-up">আমাদের সাথে যোগাযোগ করুন</h2>
         <div class="contact-container" data-aos="zoom-in">
-            <form id="icsfContactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>আপনার নাম</label>
-                        <input type="text" id="name" placeholder="আপনার পুরো নাম" required>
-                    </div>
-                    <div class="form-group">
-                        <label>ইমেইল এড্রেস</label>
-                        <input type="email" id="email" placeholder="example@mail.com" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>বার্তার বিষয়</label>
-                    <input type="text" id="subject" placeholder="কি বিষয়ে লিখতে চান?">
-                </div>
-                <div class="form-group">
-                    <label>বিস্তারিত বার্তা</label>
-                    <textarea id="message" rows="6" placeholder="আপনার সমস্যা বা অভিযোগ এখানে লিখুন..." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">বার্তা পাঠান</button>
-            </form>
+            <form id="icsfContactForm" action="https://formspree.io/f/mbdpkayl" method="POST">
+    <div class="form-row">
+        <div class="form-group">
+            <label>আপনার নাম</label>
+            <input type="text" id="name" name="name" placeholder="আপনার পুরো নাম" required>
+        </div>
+
+        <div class="form-group">
+            <label>ইমেইল এড্রেস</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>বার্তার বিষয়</label>
+        <input type="text" id="subject" name="subject" placeholder="কি বিষয়ে লিখতে চান?">
+    </div>
+
+    <div class="form-group">
+        <label>বিস্তারিত বার্তা</label>
+        <textarea id="message" name="message" rows="6" placeholder="আপনার সমস্যা বা অভিযোগ এখানে লিখুন..." required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">বার্তা পাঠান</button>
+</form>
             <div id="formFeedback" style="margin-top: 25px; text-align: center; display: none; padding: 15px; border-radius: 8px;"></div>
         </div>
     </section>
